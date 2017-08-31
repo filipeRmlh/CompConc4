@@ -12,22 +12,6 @@ public class Bank {
         this.Transactions=0;
     }
 
-    public int[] getAccounts() {
-        return Accounts;
-    }
-
-    public void setAccounts(int[] accounts) {
-        Accounts = accounts;
-    }
-
-    public long getTransactions() {
-        return Transactions;
-    }
-
-    public void setTransactions(long transactions) {
-        Transactions = transactions;
-    }
-
     public void transfer(int from, int to, int amount){
         if(this.Accounts[from] >= amount){
             this.Accounts[from] -= amount;
@@ -36,6 +20,9 @@ public class Bank {
             System.err.println("Saldo insuficiente para realizar transação\n");
         }
 
+    }
+    public int size(){
+        return this.Accounts.length;
     }
 
 }
